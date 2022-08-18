@@ -1,14 +1,12 @@
 html, body { padding: 0; margin: 0 ; overflow: hidden;
--webkit-user-drag: none;
 touch-action: none;
+-webkit-overflow-scrolling: touch;
 
 }
 
 * 
 {
     -webkit-user-drag: none;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
 }
 
 
