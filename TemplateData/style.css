@@ -1,17 +1,19 @@
 html, body { padding: 0; margin: 0 ; overflow: hidden;
 -webkit-user-drag: none;
-}
-* {
+touch-action: none;
 
+}
+
+* 
+{
+    overflow: hidden;
     -webkit-user-drag: none;
-    
-    }
-/* #container {
-    height: 100vh;
     overflow-y: auto;
-    -webkit-overflow-scrolling: none;
-} */
-#unity-container { position: absolute }
+    -webkit-overflow-scrolling: touch;
+}
+
+
+#unity-container { position: absolute ;}
 #unity-container.unity-desktop { left: 50%; top: 50%; transform: translate(-50%, -50%) }
 #unity-container.unity-mobile { width: 100%; height: 100% }
 #unity-canvas { background: #231F20 }
