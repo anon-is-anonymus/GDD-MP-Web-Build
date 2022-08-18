@@ -6,7 +6,6 @@ touch-action: none;
 
 * 
 {
-    overflow: hidden;
     -webkit-user-drag: none;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
