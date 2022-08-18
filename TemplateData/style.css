@@ -4,7 +4,7 @@ html, body { padding: 0; margin: 0 ; overflow: hidden;
 #container {
     height: 100vh;
     overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
+    -webkit-overflow-scrolling: none;
 }
 #unity-container { position: absolute }
 #unity-container.unity-desktop { left: 50%; top: 50%; transform: translate(-50%, -50%) }
