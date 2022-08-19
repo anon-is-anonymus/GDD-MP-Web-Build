@@ -10,6 +10,7 @@
   </head>
   <body>
     <div id="container"></div>
+    <div style="height:20px; width: 960px; background: green;" onclick="unityInstance.SetFullscreen(1)"><b>Click here to make it full screen.</b></div>
     <div id="unity-container" class="unity-desktop">
       <canvas id="unity-canvas" width=960 height=720></canvas>
       <div id="unity-loading-bar">
@@ -25,7 +26,6 @@
         <div id="unity-build-title">GDD-MP-Unity</div>
       </div>
     </div>
-    <div style="height:20px; width: 960px; background: green;" onclick="unityInstance.SetFullscreen(1)"><b>Click here to make it full screen.</b></div>
 
     <script>
       var container = document.querySelector("#unity-container");
