@@ -22,7 +22,12 @@
       </div>
     </div>
     <div id="unity-fullscreen-button" style="display: none;"></div>
+    
     <script>
+      window.addEventListener("scroll", (e) => {
+  e.preventDefault();
+  window.scrollTo(0, 0);
+});
       const hideFullScreenButton = "";
       const buildUrl = "Build";
       const loaderUrl = buildUrl + "/GDD-MP-Web-Build.loader.js";
@@ -82,7 +87,7 @@
       config.devicePixelRatio = 1;
       }            
 
-      
+        
 
       loadingCover.style.display = "";
 
