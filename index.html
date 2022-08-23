@@ -75,7 +75,8 @@
       //   container.className = "unity-mobile";
       //   config.devicePixelRatio = 1;
       // }
-      if (/iPhone|iPad|iPod|Android|Tablet|Chrome|Safari/i.test(navigator.userAgent)) {
+      
+      if (/iPhone|iPad|iPod|Android|Tablet|Chrome|Safari/i.test(navigator.userAgent) | navigator.maxTouchPoints && navigator.userAgent.includes('Safari') && !navigator.userAgent.includes('Chrome')) {
         container.className = "unity-mobile";
         config.devicePixelRatio = 1;
       }
