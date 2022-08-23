@@ -4,9 +4,16 @@ html {
 *, *:before, *:after {
     box-sizing: inherit;
 }
-html, body {
+html {  
+    position: relative;
+    overflow: hidden;
     height: 100%;
-    position: fixed;
+}
+
+body {
+    position: relative;
+    overflow: hidden;
+    height: 100%;
 }
 canvas {
     display: block;
