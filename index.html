@@ -83,6 +83,7 @@
 
 
       
+              unityInstance.SetFullscreen(1);
       
       container.className = "unity-mobile";
       config.devicePixelRatio = 1;
@@ -98,14 +99,15 @@
           progressBarFull.style.width = `${100 * progress}%`;
         }).then((unityInstance) => {
           loadingCover.style.display = "none";
-          unityInstance.SetFullscreen(1);
-
+          fullscreenButton.style.display = "";
+          fullscreenButton.onclick = () => {
+              unityInstance.SetFullscreen(1);
+            };
+          
           // if (canFullscreen) {
           //   if (!hideFullScreenButton) {
           //   }
-          //   fullscreenButton.onclick = () => {
-          //     unityInstance.SetFullscreen(1);
-          //   };
+            
           // }
         }).catch((message) => {
           alert(message);
