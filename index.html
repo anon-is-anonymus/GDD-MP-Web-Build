@@ -22,9 +22,7 @@
       </div>
     </div>
     <div id="unity-fullscreen-button" style="display: none;"></div>
-    
     <script>
-      
       const hideFullScreenButton = "";
       const buildUrl = "Build";
       const loaderUrl = buildUrl + "/GDD-MP-Web-Build.loader.js";
@@ -61,31 +59,10 @@
         return false;
       }());
 
-      // function iOS() {
-      //   return [
-      //   'iPad Simulator',
-      //   'iPhone Simulator',
-      //   'iPod Simulator',
-      //   'iPad',
-      //   'iPhone',
-      //   'iPod'
-      // ].includes(navigator.platform)
-      // // iPad on iOS 13 detection
-      // || (navigator.userAgent.includes("Mac") && "ontouchend" in document)
-      // }
-      // if(iOS)
-      // {
-      //   container.className = "unity-mobile";
-      //   config.devicePixelRatio = 1;
-      // }
-      
-      if (/iPhone|iPad|iPod|Android|Tablet|Chrome|Safari|iOS|Mac|/i.test(navigator.userAgent)) {
+      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
         container.className = "unity-mobile";
-        // config.devicePixelRatio = 1;
-      }            
-
-        
-
+        config.devicePixelRatio = 1;
+      }
       loadingCover.style.display = "";
 
       const script = document.createElement("script");
@@ -97,10 +74,9 @@
           progressBarFull.style.width = `${100 * progress}%`;
         }).then((unityInstance) => {
           loadingCover.style.display = "none";
-          
           if (canFullscreen) {
-            fullscreenButton.style.display = "";
             if (!hideFullScreenButton) {
+              fullscreenButton.style.display = "";
             }
             fullscreenButton.onclick = () => {
               unityInstance.SetFullscreen(1);

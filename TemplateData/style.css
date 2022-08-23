@@ -6,14 +6,12 @@ html {
 }
 html, body {
     height: 100%;
-    position: fixed;
 }
 canvas {
     display: block;
 }
 body {
     margin: 0;
-
 }
 #unity-container {
     width: 100%;
