@@ -58,24 +58,24 @@
         }
         return false;
       }());
-      function iOS() {
-        return [
-        'iPad Simulator',
-        'iPhone Simulator',
-        'iPod Simulator',
-        'iPad',
-        'iPhone',
-        'iPod'
-      ].includes(navigator.platform)
-      // iPad on iOS 13 detection
-      || (navigator.userAgent.includes("Mac") && "ontouchend" in document)
-      }
+      // function iOS() {
+      //   return [
+      //   'iPad Simulator',
+      //   'iPhone Simulator',
+      //   'iPod Simulator',
+      //   'iPad',
+      //   'iPhone',
+      //   'iPod'
+      // ].includes(navigator.platform)
+      // // iPad on iOS 13 detection
+      // || (navigator.userAgent.includes("Mac") && "ontouchend" in document)
+      // }
       // if(iOS)
       // {
       //   container.className = "unity-mobile";
       //   config.devicePixelRatio = 1;
       // }
-      if (/iPhone|iPad|iPod|Android|Tablet/.i.test(navigator.userAgent |iOS)) {
+      if (/iPhone|iPad|iPod|Android|Tablet|Chrome|Safari/i.test(navigator.userAgent)) {
         container.className = "unity-mobile";
         config.devicePixelRatio = 1;
       }
