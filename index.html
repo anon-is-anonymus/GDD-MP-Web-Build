@@ -76,14 +76,10 @@
       //   config.devicePixelRatio = 1;
       // }
       
-      if (/iPhone|iPad|iPod|Android|Tablet|Chrome|Safari|iOS|Mac|/i.test(navigator.userAgent)) {
+      // if (/iPhone|iPad|iPod|Android|Tablet|Chrome|Safari|iOS|Mac|/i.test(navigator.userAgent)) {
         
-      }            
-      
+      // }            
 
-
-      
-      
       container.className = "unity-mobile";
       config.devicePixelRatio = 1;
 
@@ -98,17 +94,15 @@
           progressBarFull.style.width = `${100 * progress}%`;
         }).then((unityInstance) => {
           loadingCover.style.display = "none";
-          fullscreenButton.style.display = "";
-          fullscreenButton.onclick = () => {
-            unityInstance.SetFullscreen(1);
-
-            };
           
-          // if (canFullscreen) {
-          //   if (!hideFullScreenButton) {
-          //   }
-            
-          // }
+          if (canFullscreen) {
+            fullscreenButton.style.display = "";
+            if (!hideFullScreenButton) {
+            }
+            fullscreenButton.onclick = () => {
+              unityInstance.SetFullscreen(1);
+            };
+          }
         }).catch((message) => {
           alert(message);
         });
