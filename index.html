@@ -59,7 +59,7 @@
         return false;
       }());
 
-      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+      if (/iPhone|iPad|iPod|Android|Tablet/i.test(navigator.userAgent)) {
         container.className = "unity-mobile";
         config.devicePixelRatio = 1;
       }
@@ -75,9 +75,9 @@
         }).then((unityInstance) => {
           loadingCover.style.display = "none";
           if (canFullscreen) {
-            if (!hideFullScreenButton) {
-              fullscreenButton.style.display = "";
-            }
+            // if (!hideFullScreenButton) {
+            //   fullscreenButton.style.display = "";
+            // }
             fullscreenButton.onclick = () => {
               unityInstance.SetFullscreen(1);
             };
