@@ -58,11 +58,28 @@
         }
         return false;
       }());
-
+      function iOS() {
+        return [
+        'iPad Simulator',
+        'iPhone Simulator',
+        'iPod Simulator',
+        'iPad',
+        'iPhone',
+        'iPod'
+      ].includes(navigator.platform)
+      // iPad on iOS 13 detection
+      || (navigator.userAgent.includes("Mac") && "ontouchend" in document)
+      }
+      if(iOS)
+      {
+        container.className = "unity-mobile";
+        config.devicePixelRatio = 1;
+      }
       if (/iPhone|iPad|iPod|Android|Tablet/i.test(navigator.userAgent)) {
         container.className = "unity-mobile";
         config.devicePixelRatio = 1;
       }
+      
       loadingCover.style.display = "";
 
       const script = document.createElement("script");
@@ -75,9 +92,9 @@
         }).then((unityInstance) => {
           loadingCover.style.display = "none";
           if (canFullscreen) {
-            // if (!hideFullScreenButton) {
-            //   fullscreenButton.style.display = "";
-            // }
+            if (!hideFullScreenButton) {
+              fullscreenButton.style.display = "";
+            }
             fullscreenButton.onclick = () => {
               unityInstance.SetFullscreen(1);
             };
