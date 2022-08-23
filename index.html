@@ -80,9 +80,7 @@
               fullscreenButton.style.display = "";
             }
             fullscreenButton.onclick = () => {
-              // unityInstance.SetFullscreen(1);
-              Element.requestFullscreen(unityInstance);
-              
+              unityInstance.SetFullscreen(1);
             };
           }
         }).catch((message) => {
