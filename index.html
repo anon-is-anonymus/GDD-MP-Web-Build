@@ -23,7 +23,6 @@
     </div>
     <div id="unity-fullscreen-button" style="display: none;"></div>
     <script>
-      ScreenOrientation.lock('landscape');
       const hideFullScreenButton = "";
       const buildUrl = "Build";
       const loaderUrl = buildUrl + "/GDD-MP-Web-Build.loader.js";
@@ -61,6 +60,8 @@
       }());
 
       if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+        ScreenOrientation.lock('landscape');
+
         config.devicePixelRatio = 1;
       }
       container.className = "unity-mobile";
